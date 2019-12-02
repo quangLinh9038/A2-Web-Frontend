@@ -1,6 +1,8 @@
 import React from 'react'
-import ProductType from './ProductType.jsx'
-import ProductList from './Pages/ProductList.jsx'
+import ProductType from './ProductCategories.jsx'
+import ProductList from './ProductList.jsx'
+
+
 
 export default class App extends React.Component {
     render() {
@@ -8,8 +10,9 @@ export default class App extends React.Component {
             <div>
                 <div className='app'>
                     <div>
-                        <ProductList></ProductList>
                         <ProductType></ProductType>
+                        <ProductList></ProductList>
+                        
                     </div>
                 </div>
             </div>
