@@ -3,7 +3,7 @@ import React from 'react'
 
 const url = 'http://13.251.156.195:8080/productTypes'
 
-export default class ProductType extends React.Component {
+export default class ProductCategories extends React.Component {
 
     constructor() {
         super()
@@ -17,8 +17,8 @@ export default class ProductType extends React.Component {
     fetchProductTypes() {
         fetch(url).then(res => res.json())
             .then(json => {
-                var list = json.filter(s => typeof s.id === 'string' && s.id.startsWith("s3697110"))
-                this.setState({ productTypes: list })})
+                // var list = json.filter(s => typeof s.id === 'string' && s.id.startsWith("s3697110"))
+                this.setState({ productTypes: json })})
     }
 
     handleChange(e) {

@@ -1,7 +1,9 @@
 import React from 'react'
-import ProductType from './ProductCategories.jsx'
+import { BrowserRouter,Route, Link, Switch } from 'react-router-dom'
+import ProductCategories from './ProductCategories.jsx'
 import ProductList from './ProductList.jsx'
-
+import ProductPage from './ProductPage.jsx'
+import ProductDetail from './ProductDetail.jsx'
 
 
 export default class App extends React.Component {
@@ -10,8 +12,22 @@ export default class App extends React.Component {
             <div>
                 <div className='app'>
                     <div>
-                        <ProductType></ProductType>
-                        <ProductList></ProductList>
+                        <BrowserRouter>
+                            <ul>
+                                <li>
+                                    <Link to ='/ProductPage'>Product</Link>
+                                </li>
+                            
+                            </ul>
+                            <Switch>
+                                <Route path='/ProductPage' component={ProductPage} />
+                                <Route path={`/ProductDetail/:imageURL/:id/:name/:price/:description/:brand/:producer`} 
+                                component={ProductDetail} />
+
+                            </Switch>
+                        </BrowserRouter>
+                        <ProductCategories/>
+                        <ProductList/>
                         
                     </div>
                 </div>

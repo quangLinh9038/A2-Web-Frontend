@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 const url = "http://13.251.156.195:8080/products"
 
 
@@ -38,6 +39,9 @@ export default class ProductPage extends React.Component {
                                 <li>{p.name}</li>
                                 <li>{p.price}</li>
                                 <li>{p.imageURL}</li>
+                                <Link to={`/ProductDetail/${p.imageURL}/${p.id}/${p.name}/${p.price}/${p.description}/${p.brand}/${p.producer}`}>
+                                <button>Detail</button>
+                                </Link>
                             </div>
                         )
                         }
