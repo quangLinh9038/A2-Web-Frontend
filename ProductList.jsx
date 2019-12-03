@@ -3,8 +3,8 @@ import React from 'react'
 const url = "http://13.251.156.195:8080/products"
 export default class ProductList extends React.Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             products: [],
             id: '',
@@ -21,8 +21,8 @@ export default class ProductList extends React.Component {
         fetch(url)
             .then(res => res.json())
             .then(json => {
-                // var list = json.filter(p=>typeof p.id!=='undefined' && p.id!=="")
-                this.setState({ products: json })
+                var list = json.filter(p=>typeof p.id === 'string' && p.id.startsWith('s3697110'))
+                this.setState({ products: list })
             })
     }
 

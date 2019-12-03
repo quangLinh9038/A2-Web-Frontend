@@ -9,29 +9,31 @@ import ProductDetail from './ProductDetail.jsx'
 export default class App extends React.Component {
     render() {
         return (
-            <div>
                 <div className='app'>
+                    
                     <div>
                         <BrowserRouter>
                             <ul>
                                 <li>
-                                    <Link to ='/ProductPage'>Product</Link>
+                                    <Link to ='/ProductPage'>All available product</Link>
+                                    
+                                    
                                 </li>
-                            
+                                <li><Link to ='ProductCategories'>Product Type</Link></li>
+                                <li><Link to ='ProductList'>Product List</Link></li>
                             </ul>
                             <Switch>
                                 <Route path='/ProductPage' component={ProductPage} />
-                                <Route path={`/ProductDetail/:imageURL/:id/:name/:price/:description/:brand/:producer`} 
-                                component={ProductDetail} />
+                                <Route path={`/ProductDetail/:id/:name/:price/:description/:brand/:producer/:imageURL`} component={ProductDetail}/>
+                                <Route path='/ProductCategories' component={ProductCategories} />
+                                <Route path='/ProductList' component={ProductList} />
 
                             </Switch>
                         </BrowserRouter>
-                        <ProductCategories/>
-                        <ProductList/>
+                     
                         
                     </div>
                 </div>
-            </div>
         )
     }
 }
