@@ -1,5 +1,4 @@
 import React from 'react'
-import ProductPage from './ProductPage.jsx'
 
 
 export default class ProductDetail extends React.Component {
@@ -45,6 +44,7 @@ export default class ProductDetail extends React.Component {
                 <div>
                     <strong>Image</strong>:
                     {this.props.match.params.imgURL} 
+                    
                 </div>
 
 

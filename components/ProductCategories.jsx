@@ -17,8 +17,8 @@ export default class ProductCategories extends React.Component {
     fetchProductTypes() {
         fetch(url).then(res => res.json())
             .then(json => {
-                // var list = json.filter(s => typeof s.id === 'string' && s.id.startsWith('s3697110'))
-                this.setState({ productTypes: json })})
+                var list = json.filter(s => typeof s.id === 'string' && s.id.startsWith('s3697110'))
+                this.setState({ productTypes: list })})
     }
 
     handleChange(e) {
