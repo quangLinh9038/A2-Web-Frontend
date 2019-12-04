@@ -16,8 +16,6 @@ export default class App extends React.Component {
                             <ul>
                                 <li>
                                     <Link to ='/ProductPage'>All available product</Link>
-                                    
-                                    
                                 </li>
                                 <li><Link to ='ProductCategories'>Product Type</Link></li>
                                 <li><Link to ='ProductList'>Product List</Link></li>
