@@ -23,7 +23,8 @@ export default class ProductDetail extends React.Component {
 
                 <div>
                     <strong>Price</strong>:
-                    {this.props.match.params.price} VND
+                    {this.props.match.params.price} 
+                    <p>VND</p>
                 </div>
 
                 <div>

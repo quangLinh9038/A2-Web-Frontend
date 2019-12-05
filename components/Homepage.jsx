@@ -70,7 +70,7 @@ export default class Homepage extends React.Component {
                 </Wrapper>
                 <div>
                         <Link to='./ProductPage'  className='m-3-fluid justify-content-center d-flex ' style={{ color: "black" }}>
-                          More product here...
+                          More products here...
                         </Link>
                     
                 </div>
