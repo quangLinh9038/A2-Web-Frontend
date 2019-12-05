@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import classNames from 'classnames';
+
 
 const url = "http://13.251.156.195:8080/products"
 
@@ -10,9 +12,14 @@ export default class ProductPage extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            products: []
+            products: [],
+            listView: true,
+            gridview: false,
+            modalVisibility: false,
         }
     }
+   
+
 
     fetchProducts() {
         fetch(url)
@@ -29,11 +36,13 @@ export default class ProductPage extends React.Component {
 
 
     render() {
-        return (
+            return (
+
+
             <div>
                 <h1>Available products:</h1>
                 <div>
-
+            
                     {this.state.products.map(p =>
                         <div>
                             <div>
