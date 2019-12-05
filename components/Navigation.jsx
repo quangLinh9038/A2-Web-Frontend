@@ -41,11 +41,9 @@ export default class Navigation extends React.Component {
 
                             <form class="form-inline my-2 my-sm-0 " action="http://www.google.com/search" method="GET" role="search" onsubmit="Gsitesearch(this)" >
 
-                                <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search" />
+                                <input class="form-control mr-sm-2" type="search" placeholder="Search products..." aria-label="Search" />
                                 <button class="btn btn-outline-light my-5 my-sm-3" type="submit">
-                                    <span class="fas fa-search"></span>
-                                    {/* import icon?
-                                    */}
+                                    <i class="fas fa-search"></i>
                                 </button>
                             </form>
                         </div>
@@ -58,7 +56,5 @@ export default class Navigation extends React.Component {
 }
 const dropStyle = {
     display: 'block',
-    "&:hover":{
-        transition: 1
-    }
+    color: 'whitesmoke',
 };
