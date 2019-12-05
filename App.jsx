@@ -7,6 +7,8 @@ import ProductDetail from './components/ProductDetail.jsx'
 import Homepage from './components/Homepage.jsx'
 import Navigation from './components/Navigation.jsx'
 import Footer from './components/Footer.jsx'
+
+
 export default class App extends React.Component {
     render() {
         return (

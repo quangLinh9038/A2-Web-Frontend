@@ -1,57 +1,72 @@
 import React from 'react'
-import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
-import ProductCategories from './ProductCategories.jsx'
-import ProductList from './ProductList.jsx'
-import ProductPage from './ProductPage.jsx'
-import ProductDetail from './ProductDetail.jsx'
 
+import styled from 'styled-components'
+
+const Wrapper = styled.div`
+    padding: 4em;
+`
+const imgCarousel = styled.div`
+    width: 100px;
+    height: 200px;
+`
 
 
 export default class Homepage extends React.Component {
 
+    
     render() {
         return (
             <div>
                 <div>
-                    <h1 className='m-3 d-flex justify-content-center'> Welcome to our store</h1>
+                    <h1 className='m-3-fluid d-flex justify-content-center' style={{marginTop: 30}}> Welcome to our store</h1>
                 </div>
-
-                <div class="d-flex justify-content-center">
-                    <div id="carousel" className="carousel-slide" data-ride="carousel">
+                <Wrapper>
+                    <div id="myCarousel" className="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
-                            <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
+                            <li className="active" data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
                             <li data-target="#myCarousel" data-slide-to="2"></li>
-                            <li data-target="#myCarousel" data-slide-to="3"></li>
                         </ol>
+                        <imgCarousel>
                         <div className="carousel-inner">
                             <div className="carousel-item active">
                                 <img src="https://s3.amazonaws.com/nikeinc/assets/38830/Mercurial-Magista-Tiempo-Hypervenom-Brighten-Pitch_hd_1600.jpg?1426117820"
-                                    className="img-fluid mx-auto d-block w-100"
-                                    alt="First slide" />
+                                    className="img-fluid d-block w-100 "
+                                    alt="First Slide"/>
+                                    <div className="carousel-caption">
+                                        <p>"The lastest pack of Nike boots made by ancient design with high technology!"</p>
+                                    </div>
                             </div>
 
                             <div className="carousel-item">
                                 <img src="https://2.bp.blogspot.com/-uOdegqT5zRk/XKxcFzjNtZI/AAAAAAAB22E/rjE8kQ9N96YAyl2OCZFMkHF3M-8o_CazACLcBGAs/s738/nike-euphoria-pack-2019-football-boots-1.jpg"
-                                    class="img-fluid mx-auto d-block w-100"
-                                    alt="Second slide" />
+                                    className="img-fluid d-block w-100"
+                                    alt="Second Slide" />
+                                    <div className="carousel-caption">
+                                        <p>The incoming Nike's pack introduced to you with advanced techniques and modern design.</p>
+                                    </div>
                             </div>
 
                             <div className="carousel-item">
                                 <img src="http://www.soccer365.com/wp-content/uploads/2018/09/adidas-spectral-mode-pack-1-1080x675.jpg"
-                                    class="img-fluid mx-auto d-block w-100"
-                                    alt="Third slide" />
+                                    className="img-fluid d-block w-100"
+                                    alt="Third Slide" />
+                                    <div className="carousel-caption">
+                                        <p>In competition with Nike, Adidas continue releasing the newest football pack which is inspired of Messi who recently took the sixth Ballon D'or</p>
+                                    </div>
                             </div>
-                            <a className="left carousel-control" href="#myCarousel" data-slide="prev">
-                                <i class="fal fa-angle-left"></i>
-                                <span class="sr-only">Previous</span>
+                            <a className="carousel-control-prev" href="#myCarousel" data-slide="prev" role="button">
+                                <i className="fa fa-angle-left"></i>
+                                <span className="sr-only">Previous</span>
                             </a>
-                            <a className="right carousel-control" href="#myCarousel" data-slide="next">
-                                <i class="fal fa-angle-right"></i>
-                                <span class="sr-only">Next</span>
+                            <a className="carousel-control-next" href="#myCarousel" data-slide="next" role="button">
+                                <i className="fa fa-angle-right"></i>
+                                <span className="sr-only">Next</span>
                             </a>
                         </div>
+                        </imgCarousel>
                     </div>
-                </div>
+                </Wrapper>
             </div>
         )
     }
