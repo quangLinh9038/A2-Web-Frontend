@@ -53,9 +53,7 @@ export default class ListProduct extends Component {
                             </Link>
                         </td>
                     </tr>
-             
             )
-
         }
         )
     }

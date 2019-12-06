@@ -38,26 +38,26 @@ export default class GridProducts extends Component {
         return this.state.products.map((p) => {
             const { brand, name, price, imageURL } = p
             return (
-                <div>
+                <div className='card rounded' key={brand}>
                     <div className='card-header'>{brand}</div>
                     <div className='car-body'>
-                        <div className='card-img-top'>
+                        <div className='card-img'>
                             <img src={imageURL} className='img-fluid' height={300} width={300} />
                         </div>
-                        <ul>
-                            <li>
+                        <ul className='list-group list-group-flush'>
+                            <li className='list-group-item'>
                                 <strong>Name:</strong>
                                 {name}
                             </li>
-                            <li>
+                            <li className='list-group-item'>
                                 <strong>Price: </strong>
                                 {price} VND
-                        </li>
-                            <li>
-                                <Link to={`/ProductDetail/${p.id}/${p.name}/${p.price}/${p.description}/${p.brand}/${p.producer}/${p.imageURL}`}>
+                            </li>
+                            <li className='list-group-item'>
+                                <Link to={`/ProductDetail/${p.id}/${p.name}/${p.price}/
+                                ${p.description}/${p.brand}/${p.producer}/${p.imageURL}`}>
                                     <button className='btn btn-outline-secondary'>Details</button>
                                 </Link>
-
                             </li>
                         </ul>
                     </div>
@@ -70,7 +70,7 @@ export default class GridProducts extends Component {
         return (
             <div className='container-fluid'>
                 <div className='row' style={{ marginTop: 10 }}>
-                    <img src="https://wallpapercave.com/wp/wp2835830.jpg" alt="imgList" className="img-fluid rounded mx-auto d-block" />
+                    <img src="https://wallpapercave.com/wp/wp2835830.jpg" alt="imgList" className="img-fluid rounded d-block" />
                 </div>
                 <Wrapper style={{ marginTop: -20 }}>
                     <h3 className='m-3 d-flex justify-content-center'>Available products:</h3>
@@ -86,39 +86,16 @@ export default class GridProducts extends Component {
                         </div>
                     </div>
                     <div className='row'>
-                        <div className='col-lg-3'>
+                        <div className='col-md-2'>
                             Filter
                         </div>
-                        <div className='col-lg-9'>
-                            <div className='row'>
-                                <div className='card-columns'>
-                                    <div class='card rounded' >
-                                        {/* <div className='card-header'>{p.brand}</div>
-                                        <div className='card-body'>
-                                            <div className='card-img-top'>
-                                                <img src={p.imageURL} className='img-fluid' height={300} width={300} />
-                                            </div>
-                                            <ul>
-                                                <li>
-                                                    <strong>Name:</strong>
-                                                    {p.name}
-                                                </li>
-                                                <li>
-                                                    <strong>Price: </strong>
-                                                    {p.price} VND
-                                                </li>
-                                                <li>
-                                                    <Link to={`/ProductDetail/${p.id}/${p.name}/${p.price}/${p.description}/${p.brand}/${p.producer}/${p.imageURL}`}>
-                                                        <button className='btn btn-outline-secondary'>Details</button>
-                                                    </Link>
-
-                                                </li>
-                                            </ul>
-                                        </div> */}
-                                        {this.renderCardData()}
-                                    </div>
+                        <div className='col-md-9'>
+                            <div className='card-columns'>
+                                <div>
+                                    {this.renderCardData()}
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </Wrapper>
