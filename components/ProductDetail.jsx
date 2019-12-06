@@ -8,7 +8,6 @@ export default class ProductDetail extends React.Component {
         return (
             <div>
                 Products info:
-                
                 <div>
                     <strong>ID</strong>:
                     {this.props.match.params.id}
@@ -45,7 +44,6 @@ export default class ProductDetail extends React.Component {
                 <div>
                     <strong>Image</strong>:
                     {this.props.match.params.imgURL} 
-                    
                 </div>
 
 

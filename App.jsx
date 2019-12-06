@@ -7,6 +7,8 @@ import ProductDetail from './components/ProductDetail.jsx'
 import Homepage from './components/Homepage.jsx'
 import Navigation from './components/Navigation.jsx'
 import Footer from './components/Footer.jsx'
+import ListProduct from './components/ListProduct.jsx'
+import GridProducts from './components/GridProduct.jsx'
 
 
 export default class App extends React.Component {
@@ -21,6 +23,8 @@ export default class App extends React.Component {
                         <Route path={`/ProductDetail/:id/:name/:price/:description/:brand/:producer/:imageURL`} component={ProductDetail}/>
                         <Route path='/ProductCategories' component={ProductCategories} />
                         <Route path='/ProductList' component={ProductList} />
+                        <Route path='/ListProduct' component={ListProduct}/>
+                        <Route path='/GridProduct' component={GridProducts}/>
                     </Switch>
                 </BrowserRouter>
             </div>

@@ -21,7 +21,7 @@ export default class Navigation extends React.Component {
                                     <Link to="/" className="nav-link text-light">Home</Link>
                                 </li>
                                 <li className="nav-item ml-5 active">
-                                    <Link to="/ProductPage" className="nav-link text-light">Products</Link>
+                                    <Link to="/ListProduct" className="nav-link text-light">Products</Link>
                                 </li>
                                 <div className="dropdown ml-5 active">
                                     <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownmenu"
