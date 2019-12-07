@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { BrowserRouter, Link, Switch, Route } from 'react-router-dom'
 import styled from 'styled-components'
 import ProductPage from './ProductPage.jsx'
@@ -12,7 +12,7 @@ const Wrapper = styled.section`
 `
 
 
-export default class GridProducts extends Component {
+export default class GridProducts extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -70,7 +70,7 @@ export default class GridProducts extends Component {
         return (
             <div className='container-fluid'>
                 <div className='row' style={{ marginTop: 10 }}>
-                    <img src="https://wallpapercave.com/wp/wp2835830.jpg" alt="imgList" className="img-fluid rounded d-block" />
+                    <img src="https://wallpapercave.com/wp/wp2835830.jpg" alt="imgList" className="img-fluid rounded mx-auto d-block" />
                 </div>
                 <Wrapper style={{ marginTop: -20 }}>
                     <h3 className='m-3 d-flex justify-content-center'>Available products:</h3>

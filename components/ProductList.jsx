@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const url = "http://13.251.156.195:8080/products"
+
 export default class ProductList extends React.Component {
 
     constructor(props) {
@@ -16,6 +17,7 @@ export default class ProductList extends React.Component {
             addNew: true,
         }
     }
+
 
     fetchProductList() {
         fetch(url)

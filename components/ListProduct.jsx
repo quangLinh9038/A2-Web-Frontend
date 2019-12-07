@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components'
-import Filter from './Filter.jsx'
 const url = "http://13.251.156.195:8080/products"
 
 const Wrapper = styled.section`
@@ -9,15 +8,59 @@ const Wrapper = styled.section`
     background-color: "white-smoke"
 `
 
+const PageNumber = styled.span`
+    color: rgb(62, 140, 204);
+    user-select: none;
+    cursor: pointer;
+    margin: 0 3px;
+    padding: 0 5px;
+    border: 1px solid rgb(62, 140, 204);
+    text-align: center;
+    border-radius: 2px;
+`
 
-export default class ListProduct extends Component {
+class TableItem extends React.Component {
+    render() {
+        return (
+            <tr>
+                <td>{this.props.stt}</td>
+                <td>
+                    <span>{this.props.data.id}</span>
+                </td>
+                <td>
+                    <span>
+                        <img src={this.props.data.imageURL} alt="imgTable" className='img-fluid' height={200} width={200} />
+                    </span>
+                </td>
+                <td>
+                    <span>{this.props.data.name}</span>
 
+                </td>
+                <td>
+                    <span>{this.props.data.price}</span>
+                </td>
+                <td>
+                    <Link to={`/ProductDetail/${this.props.data.id}/${this.props.data.name}/${this.props.data.price}
+                    /${this.props.data.description}/${this.props.data.brand}/${this.props.data.producer}/${this.props.data.imageURL}`}>
+                        <button className='btn btn-outline-secondary'> More details...</button>
+                    </Link>
+                </td>
+            </tr>
+        )
+    }
+}
+
+export default class ListProduct extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             products: [],
-        }
+            currentPage: 1,
+            productsPerPage: 2
+        };
+        this.chosePage = this.chosePage.bind(this)
     }
+
 
     fetchProducts() {
         fetch(url)
@@ -29,37 +72,35 @@ export default class ListProduct extends Component {
     }
 
     componentDidMount() {
-        this.fetchProducts()
+        this.fetchProducts();
     }
 
-    renderTableData() {
-        return this.state.products.map((p,index) => {
-            const { id, name, price, imageURL } = p
-            return (
-                    <tr key={id}>
-                        <td>{id}</td>
-                        <td>
-                            <img src={imageURL} alt="imgTable" className='img-fluid' height={200} width={200} />
-                        </td>
-                        <td>
-                            {name}
-                        </td>
-                        <td>
-                            {price}
-                        </td>
-                        <td>
-                            <Link to={`/ProductDetail/${p.id}/${p.name}/${p.price}/${p.description}/${p.brand}/${p.producer}/${p.imageURL}`}>
-                                <button className='btn btn-outline-secondary'> More details...</button>
-                            </Link>
-                        </td>
-                    </tr>
-            )
-        }
-        )
+    chosePage(event) {
+        this.setState({
+            currentPage: Number(event.target.id)
+        })
     }
-   
 
     render() {
+        //get current posted products
+        var productList = this.state.products
+        const currentPage = this.state.currentPage
+        const productsPerPage = this.state.productsPerPage
+        
+        const indexOfLastProduct = currentPage * productsPerPage
+        const indexOfFirstProduct = indexOfLastProduct - productsPerPage
+        //get a new list for present page
+        const currentNewList = productList.slice(indexOfFirstProduct, indexOfLastProduct)
+        //set stt for pages
+        const renderNewList = currentNewList.map((todo, index) => {
+            return <TableItem stt={index + 1 + (currentPage - 1) * productsPerPage} key={index} data={todo} />
+        })
+
+        //get page numbers
+        const pageNumbers = [];
+        for (let i = 1; i <= Math.ceil(productList.length / productsPerPage); i++) {
+            pageNumbers.push(i);
+        }
 
         return (
             <div className='container-fluid'>
@@ -83,22 +124,50 @@ export default class ListProduct extends Component {
                     <div className='row'>
                         <div className='col-lg-2'>
                             filter
-                    </div>
+                        </div>
                         <div className='col-lg-10'>
                             <table className='table table-bordered'>
                                 <thead>
                                     <tr>
-                                        <th scope="col">ID</th>
-                                        <th scope="col">Image</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Price</th>
-                                        <th scope="col"></th>
+                                        <th >STT</th>
+                                        <th >ID</th>
+                                        <th >IMAGE</th>
+                                        <th >NAME</th>
+                                        <th >PRICE (VND)</th>
+                                        <th ></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {this.renderTableData()}
+                                    {renderNewList}
                                 </tbody>
                             </table>
+                            <div className='row justify-content-center'>
+                                <div className="pagination-custom">
+                                    <ul id="page-numbers">
+                                        {pageNumbers.map(number => {
+                                            if (this.state.currentPage === number) {
+                                                return (
+                                                    <PageNumber>
+                                                        <span key={number} id={number} className="active">
+                                                            {number}
+                                                        </span>
+                                                    </PageNumber>
+                                                )
+                                            }
+                                            else {
+                                                return (
+                                                    <PageNumber>
+                                                        <span key={number} id={number} onClick={this.chosePage}>
+                                                            {number}
+                                                        </span>
+                                                    </PageNumber>
+                                                )
+                                            }
+                                        }
+                                        )}
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </Wrapper>
