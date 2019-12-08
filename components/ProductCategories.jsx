@@ -32,7 +32,7 @@ export default class ProductCategories extends React.Component {
         this.fetchProductTypes()
     }
     save() {
-        if (confirm('Do you want to delete?')) {
+        if (confirm('Do you want to save?')) {
             if (this.state.addNew === true) {
                 fetch(url, {
                     method: 'post',
@@ -77,13 +77,13 @@ export default class ProductCategories extends React.Component {
     }
 
     edit(id, name) {
-        if (confirm('Do you want to delete?')) {
+        if (confirm('Do you want to edit?')) {
             this.setState({ id: id, name: name, addNew: false })
 
         }
     }
     add() {
-        if (confirm('Do you want to delete?')) {
+        if (confirm('Do you want to add?')) {
             this.setState({ addNew: true })
         }
     }

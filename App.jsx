@@ -13,13 +13,13 @@ import styled from 'styled-components'
 
 const Wrapper = styled.section`
     background-color :#edffed;
-    font-family:'Times New Roman', Times, serif; 
+    font-family:'Century Gothic'
 `
 
 export default class App extends React.Component {
     render() {
         return (
-            <div>
+            <Wrapper>
                 <BrowserRouter> 
                     <Navigation/> 
                     <Switch>
@@ -33,7 +33,7 @@ export default class App extends React.Component {
                     </Switch>
                     <Footer/>
                 </BrowserRouter>
-            </div>
+            </Wrapper>
         )
     }
 }

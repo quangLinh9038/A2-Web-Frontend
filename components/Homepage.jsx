@@ -9,6 +9,9 @@ const ImgCarousel = styled.div`
     width: 100%;
     height: 100%;
 `
+const LinkButton = styled.button`
+    dispay: none
+`
 
 
 export default class Homepage extends React.Component {
@@ -66,10 +69,13 @@ export default class Homepage extends React.Component {
                         </ImgCarousel>
                     </div>
                 </Wrapper>
-                <div>
-                    <Link to='./ListProduct' className='m-3-fluid justify-content-center d-flex ' style={{ color: "black" }}>
-                        More products here...
-                    </Link>
+                <div className='row justify-content-center'>
+                        <Link to='./ListProduct' className='m-3-fluid justify-content-center d-flex ' style={{ color: "black" }}>
+                            <button className="btn btn-outline-info">
+                            More products here...</button>
+                        </Link>
+
+                    
                     
                 </div>
             </div>

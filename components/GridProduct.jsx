@@ -122,7 +122,6 @@ export default class GridProducts extends React.Component {
                     </div>
                     <div className='row'>
                         <div className='col-md-2'>
-                            Filter
                         </div>
                         <div className='col-md-9'>
                             <div className='card-columns'>
