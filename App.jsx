@@ -9,7 +9,12 @@ import Navigation from './components/Navigation.jsx'
 import Footer from './components/Footer.jsx'
 import ListProduct from './components/ListProduct.jsx'
 import GridProducts from './components/GridProduct.jsx'
+import styled from 'styled-components'
 
+const Wrapper = styled.section`
+    background-color :#edffed;
+    font-family:'Times New Roman', Times, serif; 
+`
 
 export default class App extends React.Component {
     render() {
@@ -20,12 +25,13 @@ export default class App extends React.Component {
                     <Switch>
                         <Route exact path='/' component={Homepage}/>
                         <Route path='/ProductPage' component={ProductPage} />
-                        <Route path={`/ProductDetail/:id/:name/:price/:description/:brand/:producer/:imageURL`} component={ProductDetail}/>
+                        <Route path={`/ProductDetail/:id/:name/:price/:description/:brand/:producer:imageURL`} component={ProductDetail}/>
                         <Route path='/ProductCategories' component={ProductCategories} />
                         <Route path='/ProductList' component={ProductList} />
                         <Route path='/ListProduct' component={ListProduct}/>
                         <Route path='/GridProduct' component={GridProducts}/>
                     </Switch>
+                    <Footer/>
                 </BrowserRouter>
             </div>
         )

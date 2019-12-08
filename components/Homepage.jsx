@@ -13,7 +13,6 @@ const ImgCarousel = styled.div`
 
 export default class Homepage extends React.Component {
 
-
     render() {
         return (
             <div>
@@ -22,8 +21,8 @@ export default class Homepage extends React.Component {
                 </div>
                 <Wrapper>
                     <div id="myCarousel" className="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li className="active" data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <ol className="carousel-indicators">
+                            <li className="active" data-target="#myCarousel" data-slide-to="0" ></li>
                             <li data-target="#myCarousel" data-slide-to="1"></li>
                             <li data-target="#myCarousel" data-slide-to="2"></li>
                         </ol>
@@ -68,14 +67,13 @@ export default class Homepage extends React.Component {
                     </div>
                 </Wrapper>
                 <div>
-                        <Link to='./ProductPage'  className='m-3-fluid justify-content-center d-flex ' style={{ color: "black" }}>
-                          More products here...
-                        </Link>
+                    <Link to='./ListProduct' className='m-3-fluid justify-content-center d-flex ' style={{ color: "black" }}>
+                        More products here...
+                    </Link>
                     
                 </div>
             </div>
         )
     }
-
 }
 

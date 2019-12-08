@@ -10,11 +10,11 @@ export default class Navigation extends React.Component {
                 <nav className="navbar navbar-expand-sm navbar-light bg-dark" >
                     <div className="container-fluid">
 
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapseContent" aria-expanded="false"
+                        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapseContent" aria-expanded="false"
                             aria-controls="collapseContent" aria-label="Toggle navigation" style={{ border: 1 }}>
-                            <span class="navbar-toggler-icon"></span>
+                            <span className="navbar-toggler-icon"></span>
                         </button>
-                        <div class="collapse navbar-collapse" id="collapseContent">
+                        <div className="collapse navbar-collapse" id="collapseContent">
 
                             <ul className="navbar-nav mr-auto align-item-center mt-2 mt-lg-0">
                                 <li className="nav-item ml-5 active">
@@ -39,11 +39,11 @@ export default class Navigation extends React.Component {
                                 </div>
                             </ul>
 
-                            <form class="form-inline my-2 my-sm-0 " action="http://www.google.com/search" method="GET" role="search" onsubmit="Gsitesearch(this)" >
+                            <form className="form-inline my-2 my-sm-0 " action="http://www.google.com/search" method="GET" role="search" onsubmit="Gsitesearch(this)" >
 
-                                <input class="form-control mb-2 mr-sm-2" type="search" placeholder="Search products..." aria-label="Search" />
-                                <button class="btn btn-outline-light my-5 my-sm-3" type="submit">
-                                    <i class="fas fa-search"></i>
+                                <input className="form-control mb-2 mr-sm-2" type="search" placeholder="Search products..." aria-label="Search" />
+                                <button className="btn btn-outline-light my-5 my-sm-3" type="submit">
+                                    <i className="fas fa-search"></i>
                                 </button>
                             </form>
                         </div>

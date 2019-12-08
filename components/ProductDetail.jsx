@@ -6,48 +6,35 @@ export default class ProductDetail extends React.Component {
 
     render() {
         return (
-            <div>
-                Products info:
-                <div>
-                    <strong>ID</strong>:
-                    {this.props.match.params.id}
-
-                </div>
-
-                <div>
-                    <strong>Name</strong>:
-                    {this.props.match.params.name}
-
-                </div>
-
-                <div>
-                    <strong>Price</strong>:
-                    {this.props.match.params.price} 
-                    <p>VND</p>
-                </div>
-
-                <div>
-                    <strong>Description</strong>:
-                    {this.props.match.params.description}
-                </div>
-
-                <div>
-                    <strong>Brand</strong>:
-                    {this.props.match.params.brand}
-                </div>
-
-                <div>
-                    <strong>Producer</strong>:
-                    {this.props.match.params.producer}
-                </div>
-                
-                <div>
-                    <strong>Image</strong>:
-                    {this.props.match.params.imgURL} 
-                </div>
-
-
-            </div>
+            <div className='row justify-content-center' style={{marginTop: 100}}>
+                <div className='col-md-6'>
+                    <div className='card rounded bg-dark text-white '>
+                        {/* <img className='card-img' src={this.props.match.params.imageURL} alt="Card Image" /> */}
+                       
+                            <h4 className='card-title'>{this.props.match.params.name}</h4>
+                            </div>
+                            <div className='card-text'>
+                                <strong>ID: {this.props.match.params.id}</strong>
+                            </div>
+                            <div className='card-text'>
+                                <strong>Price: {this.props.match.params.price}VND</strong>
+                                
+                            </div>
+                            <div className='card-text'>
+                                <strong>Description:</strong>
+                                {this.props.match.params.description}
+                            </div>
+                            <div className='card-text'>
+                                <strong>Brand:</strong>
+                                {this.props.match.params.brand}
+                            </div>
+                            <div className='card-text'>
+                                <strong>Producer:</strong>
+                                {this.props.match.params.producer}
+                            </div>
+                        </div>
+                    </div>
+    
         )
     }
 

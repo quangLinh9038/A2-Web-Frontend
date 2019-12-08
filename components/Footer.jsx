@@ -4,6 +4,17 @@ import ProductCategories from './ProductCategories.jsx'
 import ProductList from './ProductList.jsx'
 import ProductPage from './ProductPage.jsx'
 import ProductDetail from './ProductDetail.jsx'
+import styled from 'styled-components'
+
+
+const Wrapper = styled.section`
+    background-color: #00203FFF;
+    color: white;
+`
+const IconSize = styled.i`
+    font-size: 25px;
+    color: white;
+`
 
 
 
@@ -11,13 +22,13 @@ export default class Homepage extends React.Component {
 
     render() {
         return (
-            <div>
+            <Wrapper>
                 <footer class="mt-5 pt-5 pb-5 footer">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-5 col-xs-12 about-blog">
                                 <h2>About blog</h2>
-                                <p class="pr-4 text-white"> This website is a personal blog aiming to share tactical football content widely by reliable sources. </p>
+                                <p class="pr-4 text-white"> "We do not promise the cheapest price but we promise for the best high quality of football gunner!" </p>
                                 <p><a href="https://www.facebook.com/RMITUniversityVietnam"><i class="fab fa-facebook-square"></i></a>
                                     <a href="https://www.instagram.com/rmituniversityvietnam/"><i class="fab fa-instagram"></i></a>
                                     <a href="https://www.youtube.com/c/RMITUniversityVietnam/"><i class="fab fa-youtube"></i></a>
@@ -42,7 +53,7 @@ export default class Homepage extends React.Component {
 
                                 <div class="mapouter">
                                     <div class="gmap_canvas"><iframe width="172" height="166" id="gmap_canvas" src="https://maps.google.com/maps?q=RMIT%20Nam&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
-                                    </iframe><a href="https://www.embedgooglemap.net/blog/private-internet-access-coupon/">embedgooglemap.net</a>
+                                    </iframe><a href="https://www.embedgooglemap.net/blog/private-internet-access-coupon/"></a>
                                     </div>
                                 </div>
                             </div>
@@ -54,7 +65,7 @@ export default class Homepage extends React.Component {
                         </div>
                     </div>
                 </footer>
-            </div>
+            </Wrapper>
 
 
         )

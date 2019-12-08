@@ -1,6 +1,8 @@
 import React from 'react'
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components'
+import Filter from './Filter.js'
+import ProductList from './ProductList.jsx'
 const url = "http://13.251.156.195:8080/products"
 
 const Wrapper = styled.section`
@@ -105,7 +107,7 @@ export default class ListProduct extends React.Component {
         return (
             <div className='container-fluid'>
                 <div className='row' style={{ marginTop: 10 }}>
-                    <img src="https://wallpapercave.com/wp/wp2567605.jpg" alt="imgList" className="img-fluid rounded mx-auto d-block" />
+                    <img src="https://wallpapercave.com/wp/wp2567605.jpg" alt="imgList" className="img-fluid rounded mx-auto d-block" height={500} width={650}/>
 
                 </div>
                 <Wrapper style={{ marginTop: -20 }}>
@@ -123,7 +125,7 @@ export default class ListProduct extends React.Component {
                     </div>
                     <div className='row'>
                         <div className='col-lg-2'>
-                            filter
+                            {/* <Filter/> */}
                         </div>
                         <div className='col-lg-10'>
                             <table className='table table-bordered'>
