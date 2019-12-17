@@ -2,8 +2,7 @@ var config = {
     entry: './main.js',
      
     output: {
-       path:'/',
-       filename: 'main.js',
+       filename: 'index.js',
     },
 
     devServer: {

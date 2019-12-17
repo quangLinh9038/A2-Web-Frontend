@@ -6,8 +6,15 @@ export default class ProductDetail extends React.Component {
 
     render() {
         return (
+        
             <div className='row justify-content-center' style={{marginTop: 100}}>
                 <div className='col-md-6'>
+                    <Link to="/ListProduct">
+                        <button className='btn btn-primary'><i className='fa fa-arrow-left'></i></button>
+                    </Link>
+                </div>
+                <div className='col-md-6'>
+
                     <div className='card rounded bg-dark text-white '>
                         {/* <img className='card-img' src={this.props.match.params.imageURL} alt="Card Image" /> */}
                        
